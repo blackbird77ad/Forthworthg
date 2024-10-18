@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cursor*/
+.cursor {
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+/* Animation */
+.typewriter-animation {
+    animation:
+        typewriter 5s steps(50) 1s 1 normal both,
+        blinkingCursor 500ms steps(50) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkingCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+} 
+
+.divs-bg {
+    background-color: #E4D5E5;
+    width: 100%;
+    height: 80vh;
+}
+
+.hero-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 95%;
+    margin: auto;
+}
+
+.left-div {
+    width: 45%;
+    /* margin: auto; */
+    /* background-color: #6003631f; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 27px;
+}
+
+.left-div h2 {
+    color: white;
+    text-shadow: 1px 1px 2px #600363ef;
+    width: 30%;
+    text-align: center;
+    background-color: #E4D5E5;
+    border-radius: 25rem;
+}
+
+.left-div h1 {
+    color: #600363ef;
+    text-shadow: 1px 1px 6px white;
+    width: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+}
+
+.hire-btn button {
+    width: 5%;
+    height: 97%;
+    padding-top: 15.6rem;
+    align-content: center;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #B990BB;
+    border-style: none;
+}
+
+.right-div {
+    overflow-x: hidden;
+    width: 80%;
+    height: 100%
+}
+
+.right-div button {
+    padding: 0.2em 0.2em;
+    padding-right: 1rem;
+    text-align: center;
+    font-size: 23.5px;
+    font-weight: 4px;
+    font-family: inherit;
+    color: #E9C6EE;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    border-radius: 0.6rem;
+        background-color: #600363;
+        border: 2.5px solid #E9C6EE;
+        box-shadow: 2px 2px 5px #600363;
+}
+
+.blob {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background-color: #600363;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    overflow: hidden;
+    margin: auto;
+    animation: moveBlob 1s ease-in-out 1s forwards;
+    /* Animate blob after 2 seconds */
+}
+
+/* Blob X-axis animation */
+@keyframes moveBlob {
+    0% {
+        transform: translateX(0);
+        /* Start at original position */
+    }
+
+    100% {
+        transform: translateX(100px);
+        /* Moves 100px to the right */
+    }
+}
+
+/* Image on top of the blob */
+.blob-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Adding the x-axis transition on hover */
+.blob:hover .blob-image {
+    transform: translateX(20px);
+    /* Moves the image 20px to the right */
+}

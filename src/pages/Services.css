@@ -1,0 +1,84 @@
+.stack-page {
+    width: 100%;
+    height: 95vh;
+    background-color: #E4D5E5;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.titlestack {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #c1a7c5;
+    text-shadow: 2px 2px 5px #120513;
+    height: 10vh;
+}
+
+.titlestack:hover {
+    font-size: 2.8rem;
+    color: #442a47;
+    text-shadow: 2px 2px 5px #240127;
+}
+
+.stack-cards {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.card {
+    width: 20%;
+    height: 100%;
+    border: 1px solid #600363;
+    box-shadow: 2px 2px 5px white;
+    border-radius: 1rem;
+    background-color: #240127;
+}
+
+.card-img {
+    height: 50%;
+    object-fit: contain;
+}
+
+.card ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+}
+
+.card li {
+    font-size: 1.2rem;
+    color: #0e0d0e;
+
+}
+
+.card h3 {
+    color: #4e085c;
+    /* background-color: #2401279d;
+    border-radius: 8px; */
+}
+
+
+.card-text {
+    height: 40%;
+    background-color: white;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    column-gap: 1rem;
+
+}
+
+.bullet-color {
+    color: gold;
+}
