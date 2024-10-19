@@ -8,8 +8,8 @@ const Header = () => {
         <header className='header'>
             <nav className='nav'>
                 <div className='nav-half'>
-                    <Link to="/"><img src={logo} alt="My icon" className='nav-logo' /></Link>
-                    
+                    <Link to="/"><img src={logo} alt="My icon" className='nav-logo'/></Link>
+                    <h3>Prem.Da</h3>
                     <a href="../assets/images/Davida-CV-webdev.zip" download className='nav-a'>
                         <button className='nav-button'>RESUME</button>
                     </a>

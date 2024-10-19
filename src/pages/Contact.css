@@ -1,11 +1,13 @@
 .form-bg {
-    background-color: #E4D5E5;
+    background-color: white;
     height: 85vh;
+    padding: 1rem 1rem;
 }
 
 .contact-form {
     color: #600363;
-    padding: 20px;
+    /* padding-top: 4rem; */
+    padding: 30px;
     border-radius: 8px;
     max-width: 500px;
     margin: 0 auto;
@@ -36,7 +38,7 @@
     margin-bottom: 15px;
     font-size: 23.5px;
     color: #E9C6EE;
-    background-color: #600363;
+    background-color: #6003634b;
     border: 2px solid #E9C6EE;
     box-shadow: 2px 2px 4px #600363;
     cursor: pointer;
@@ -47,7 +49,7 @@
 .contact-form textarea {
     border-radius: 0.4rem;
     color: #E9C6EE;
-    background-color: #600363;
+    background-color: #60036350;
     border: 2px solid #E9C6EE;
     box-shadow: 2px 2px 4px #600363;
     cursor: pointer;
