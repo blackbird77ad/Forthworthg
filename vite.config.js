@@ -5,10 +5,5 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3500,
-  },
-  build: {
-    rollupOptions: {
-      external: ['react-icons/fa']
-    }
   }
 });
