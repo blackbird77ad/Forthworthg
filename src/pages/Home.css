@@ -2,213 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Cursor*/
-.cursor {
-    position: relative;
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, .75);
-    font-size: 30px;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-}
-
-/* Animation */
-.typewriter-animation {
-    animation:
-        typewriter 5s steps(50) 1s 1 normal both,
-        blinkingCursor 500ms steps(50) infinite normal;
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
-}
-
-@keyframes blinkingCursor {
-    from {
-        border-right-color: rgba(255, 255, 255, .75);
-    }
-
-    to {
-        border-right-color: transparent;
-    }
-} 
-
-.divs-bg {
-    background-color: #E4D5E5;
-    width: 100%;
-    height: 80vh;
-}
-
-.hero-parent {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 95%;
-    margin: auto;
-}
-
-.left-div {
-    width: 45%;
-    /* margin: auto; */
-    /* background-color: #6003631f; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 27px;
-}
-
-.left-div h2 {
-    color: white;
-    text-shadow: 1px 1px 2px #600363ef;
-    width: 30%;
-    text-align: center;
-    background-color: #E4D5E5;
-    border-radius: 25rem;
-}
-
-.left-div h1 {
-    color: #600363ef;
-    text-shadow: 1px 1px 6px white;
-    width: inherit;
-    text-align: center;
-    display: flex;
-    justify-content: right;
-}
-
-.hire-btn button {
-    width: 5%;
-    height: 97%;
-    padding-top: 15.6rem;
-    align-content: center;
-    margin: auto;
-    border-radius: 10px;
-    font-size: 1em;
-    background-color: #B990BB;
-    border-style: none;
-}
-
-.right-div {
-    overflow-x: hidden;
-    width: 80%;
-    height: 100%
-}
-
-.right-div button {
-    padding: 0.2em 0.2em;
-    padding-right: 1rem;
-    text-align: center;
-    font-size: 23.5px;
-    font-weight: 4px;
-    font-family: inherit;
-    color: #E9C6EE;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    border-radius: 0.6rem;
-        background-color: #600363;
-        border: 2.5px solid #E9C6EE;
-        box-shadow: 2px 2px 5px #600363;
-}
-
-.blob {
-    position: relative;
-    width: 350px;
-    height: 400px;
-    background-color: #600363;
-    clip-path: ellipse(50% 50% at 50% 50%);
-    overflow: hidden;
-    margin: auto;
-    animation: moveBlob 1s ease-in-out 1s forwards;
-    /* Animate blob after 2 seconds */
-}
-
-/* Blob X-axis animation */
-@keyframes moveBlob {
-    0% {
-        transform: translateX(0);
-        /* Start at original position */
-    }
-
-    100% {
-        transform: translateX(100px);
-        /* Moves 100px to the right */
-    }
-}
-
-/* Image on top of the blob */
-.blob-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-/* Adding the x-axis transition on hover */
-.blob:hover .blob-image {
-    transform: translateX(20px);
-    /* Moves the image 20px to the right */
-}/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-body,
-html {
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
 }
 
 .divs-bg {
-    background-color: #E4D5E5;
+    background-image: url(../assets/images/bg.jpg);
+    background-size: cover;
     width: 100%;
-    height: 90vh;
+    height:85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+
 }
 
-/* Navigation bar */
-.navbar {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 1rem;
-    background-color: transparent;
-}
-
-.navbar li {
-    margin: 0 15px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #600363;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #8A3B8A;
-}
-
-/* Hero Section */
 .hero-parent {
     display: flex;
     justify-content: space-between;
@@ -218,14 +28,14 @@ html {
     margin: auto;
 }
 
-/* Text Section */
+
 .text-section {
     flex: 1;
 }
 
 .greeting {
     color: #8A3B8A;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
     display: block;
 }
@@ -233,18 +43,17 @@ html {
 .main-title {
     font-size: 3rem;
     font-weight: bold;
-    color: #600363;
+    color: #B8ACA5;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .description {
-    color: #333;
+    color: goldenrod;
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
-/* Buttons */
 .buttons {
     display: flex;
     align-items: center;
@@ -252,7 +61,7 @@ html {
 
 .primary-button {
     padding: 0.8em 1.5em;
-    background-color: #600363;
+    background-color: #B8ACA5;
     color: #fff;
     border: none;
     border-radius: 0.5rem;
@@ -267,7 +76,7 @@ html {
 }
 
 .secondary-link {
-    color: #600363;
+    color: #B8ACA5;
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
@@ -276,10 +85,9 @@ html {
 }
 
 .secondary-link:hover {
-    border-bottom: 2px solid #600363;
+    border-bottom: 2px solid #B8ACA5;
 }
 
-/* Image Section */
 .image-section {
     flex: 1;
     display: flex;
@@ -287,48 +95,18 @@ html {
     align-items: center;
 }
 
-.image-wrapper {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: #600363;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
 
 .profile-image {
-    width: 90%;
-    height: 90%;
-    border-radius: 50%;
+    width: 30%;
+    height: 25%;
+    border-radius: 40rem;
     object-fit: cover;
     z-index: 1;
 }
 
-.image-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    opacity: 0;
-    background-color: rgba(96, 3, 99, 0.5);
-    transition: opacity 0.3s ease;
-}
-
-.image-wrapper:hover .image-overlay {
-    opacity: 1;
-}
-
 .learn-more {
     background-color: #fff;
-    color: #600363;
+    color: #B8ACA5;
     border: none;
     padding: 0.8em 1.5em;
     border-radius: 0.5rem;
@@ -337,15 +115,14 @@ html {
 }
 
 .learn-more:hover {
-    background-color: #8A3B8A;
-    color: #fff;
+    background-color: goldenrod;
+    color: black;
 }
 
-/* Quote */
 .quote {
     font-size: 1.5rem;
     font-style: italic;
-    color: #333;
+    color: white;
     text-align: center;
     margin-top: 20px;
 }

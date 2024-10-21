@@ -1,14 +1,14 @@
 .slider-container {
     width: 100%;
-    height: 84.8vh;
-    background-color: rgb(196, 177, 202);
+    height: 74.8vh;
+    background-color:rgba(218, 165, 32, 0.377);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-top: 1px solid rgb(195, 94, 226);
-    border-style: groove;
-    box-shadow: 2px 4px 5px #E4D5E5;
+    /* border-top: 1px solid rgb(195, 94, 226);
+    border-style: groove; */
+    box-shadow: 2px 4px 5px goldenrod;
 }
 
 .slide {
@@ -17,18 +17,18 @@
     width: 60%;
     justify-content: center;
     gap: 3rem;
-    border: 2px solid red;
-    background-color: #E4D5E5;
+    /* border: 2px solid rgb(0, 0, 0); */
+    /* background-color: #E4D5E5; */
 }
 
 .card {
-    width: 33.33vw;
+    width: 73.33vw;
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(167, 218, 29);
+    /* background-color: rgb(167, 218, 29); */
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -37,13 +37,13 @@
 .card img {
     width: 100%;
     height: auto;
-    background-color: #C4B1CA;
+    background-color: goldenrod;
     object-fit: cover;
 }
 
 .container {
-    background-color: #600363;
-    color: #E4D5E5;
+    background-color: #F1DDAB;
+    color: black;
     text-align: center;
     padding: 10px;
     width: 80%;

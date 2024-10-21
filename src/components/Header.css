@@ -1,66 +1,74 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.nav {
+.header {
+    background-color: #000;
+    color: #E9C6EE;
+    /* padding: 20px; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: goldenrod;
+    cursor: pointer;
+}
+
+/* Navbar links */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #E4D5E5;
+    width: 79%;
 }
 
-
-.nav-half {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    align-items: center;
-    column-gap: 3rem;
-
-}
-
-.nav-links{
-    width: 50%;
-}
-.nav-links ul {
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 50px;
-    margin: 0;
-    padding: 0;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
 }
 
-.nav-a a {
+.nav-link {
     text-decoration: none;
-    font-size: 23.5px;
-    color: #E9C6EE;
-    border-radius: 0.4rem;
-    background-color: #600363;
-    border: 2px solid #E9C6EE;
-    box-shadow: 2px 2px 4px #600363;
+    color: goldenrod;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
-.nav-a a:hover {
-    color: black;
-    background-color: #E4D5E5;
-    border: 2px solid #600363;
-    border-radius: 0.5rem;
+.nav-link:hover {
+    color: #F4E4F8;
 }
 
-.nav-button {
-    font-size: 23.5px;
-    color: #E9C6EE;
-    background-color: #600363;
-    border: 2px solid #E9C6EE;
-    box-shadow: 2px 2px 4px #600363;
-    cursor: pointer;
-    border-radius: 0.4rem;
-
+.nav-icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
 }
 
-.nav-logo{
-    width: 5rem;
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+    }
 }

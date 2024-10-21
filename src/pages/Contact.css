@@ -1,25 +1,25 @@
 .form-bg {
-    background-color: white;
-    height: 85vh;
+    background-color: rgba(218, 165, 32, 0.377);
+    height: 87vh;
     padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .contact-form {
-    color: #600363;
-    /* padding-top: 4rem; */
-    padding: 30px;
+    color: black;
+    width: 60%;
+    /* padding: 1rem; */
     border-radius: 8px;
     max-width: 500px;
     margin: 0 auto;
-    border: 4px solid lavender;
-    box-shadow: 2px 2px 5px #600363;
+    border: 4px solid goldenrod;
+    box-shadow: 2px 2px 5px black;
     border-style: double;
-    /* height: 60vh; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+   align-items: center;
 }
-
 
 .contact-form h2 {
     text-align: center;
@@ -28,7 +28,7 @@
 .contact-form label {
     display: block;
     margin: 10px 0 5px;
-    font-weight: bold;
+    font-weight: 1rem;
 }
 
 .contact-form input {
@@ -37,10 +37,10 @@
     padding: 10px;
     margin-bottom: 15px;
     font-size: 23.5px;
-    color: #E9C6EE;
-    background-color: #6003634b;
+    color: blue;
+    background-color: rgba(0, 0, 0, 0.219);
     border: 2px solid #E9C6EE;
-    box-shadow: 2px 2px 4px #600363;
+    box-shadow: 2px 2px 4px black;
     cursor: pointer;
     border-radius: 0.4rem;
 }
@@ -49,12 +49,11 @@
 .contact-form textarea {
     border-radius: 0.4rem;
     color: #E9C6EE;
-    background-color: #60036350;
+    background-color: rgba(0, 0, 0, 0.219);
     border: 2px solid #E9C6EE;
-    box-shadow: 2px 2px 4px #600363;
+    box-shadow: 2px 2px 4px black;
     cursor: pointer;
     width: 100%;
-    
     padding: 10px;
     margin-bottom: 15px;
     font-size: 23.5px;
@@ -68,17 +67,23 @@
 
 .contact-form .submit-button {
     font-size: 23.5px;
-    color: #E9C6EE;
-    background-color: #600363;
+    color: goldenrod;
+    background-color: black;
     border: 2px solid #E9C6EE;
-    box-shadow: 2px 2px 4px #600363;
+    box-shadow: 2px 2px 4px black;
     cursor: pointer;
     border-radius: 0.4rem;
     transition: background-color 0.3s;
 }
 
+.submit-button {
+    width: 30%;
+    background-color: black;
+    color: goldenrod;
+}
+
 .contact-form .submit-button:hover {
-    background-color: #d6b3e0;
+    background-color: black;
 }
 
 /* .contact-form textarea {

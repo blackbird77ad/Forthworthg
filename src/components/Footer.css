@@ -1,6 +1,6 @@
 .footer {
-    background-color: #E4D5E5;
-    color: #600363;
+    background-color: #000000;
+    color: goldenrod;
     padding: 20px;
     text-align: center;
     font-family: 'Arial', sans-serif;
@@ -16,7 +16,7 @@
 .footer p {
     margin: 0;
     font-size: 1rem;
-    color: #600363;
+    color: goldenrod;
 }
 
 .social-links {
@@ -27,7 +27,7 @@
 
 .social-icon {
     font-size: 1.8rem;
-    color: #600363;
+    color: goldenrod;
     transition: color 0.3s ease;
 }
 
