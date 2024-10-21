@@ -32,7 +32,7 @@ const Stack = () => {
     <div className='slider-container'>
       <div className='slide' style={{ transform: `translateX(${-currentIndex * 100}%)` }}>
         {images.map((image, index) => (
-          <div className='card' key={index}>
+          <div className='card card-col' key={index}>
             <img src={image.src} alt={image.title} />
             <div className='container'>
               <h4><b>{image.name}</b></h4>

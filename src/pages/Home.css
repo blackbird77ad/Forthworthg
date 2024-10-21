@@ -5,7 +5,17 @@
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
 }
-
+.nav-button{
+    padding: 0.8em 1.5em;
+        background-color: goldenrod;
+        color: black;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-right: 15px;
+        transition: background-color 0.3s ease;
+}
 .divs-bg {
     background-image: url(../assets/images/bg.jpg);
     background-size: cover;
@@ -29,16 +39,20 @@
 }
 
 
+.home-logo{
+    color: whitesmoke;
+}
+
 .text-section {
     flex: 1;
 }
 
-.greeting {
-    color: #8A3B8A;
+/* .greeting {
+    color: rgba(218, 165, 32, 0.623);
     font-size: 2.5rem;
     margin-bottom: 10px;
     display: block;
-}
+} */
 
 .main-title {
     font-size: 3rem;
@@ -61,8 +75,8 @@
 
 .primary-button {
     padding: 0.8em 1.5em;
-    background-color: #B8ACA5;
-    color: #fff;
+    background-color: goldenrod;
+        color: black;
     border: none;
     border-radius: 0.5rem;
     font-size: 1.2rem;
@@ -72,7 +86,8 @@
 }
 
 .primary-button:hover {
-    background-color: #8A3B8A;
+    background-color: black;
+    color: goldenrod;
 }
 
 .secondary-link {
@@ -97,7 +112,7 @@
 
 
 .profile-image {
-    width: 30%;
+    width: 40%;
     height: 25%;
     border-radius: 40rem;
     object-fit: cover;
@@ -106,7 +121,7 @@
 
 .learn-more {
     background-color: #fff;
-    color: #B8ACA5;
+    color: gold;
     border: none;
     padding: 0.8em 1.5em;
     border-radius: 0.5rem;
