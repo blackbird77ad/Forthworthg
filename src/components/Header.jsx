@@ -1,50 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaHome, FaCogs, FaServicestack, FaProjectDiagram, FaEnvelope, FaUserCircle } from 'react-icons/fa'; // Import icons
-import './Header.css';
+import React, { useState } from 'react';
+import Sidebar from './Sidebar';
 
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <header className="header">
-            <nav className="navbar">
-                <div className="logo-container">
-                    <Link to="/">
-                        <FaUserCircle className="logo-icon" /> {/* Use a relevant icon for the logo */}
-                    </Link>
-                </div>
-                <ul className="nav-links">
-                    <li>
-                        <Link to="/" className="nav-link">
-                            <FaHome className="nav-icon" />
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/stack" className="nav-link">
-                            <FaCogs className="nav-icon" />
-                            Stack
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/services" className="nav-link">
-                            <FaServicestack className="nav-icon" />
-                            Services
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/projects" className="nav-link">
-                            <FaProjectDiagram className="nav-icon" />
-                            Projects
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/contact" className="nav-link">
-                            <FaEnvelope className="nav-icon" />
-                            Contact
-                        </Link>
-                    </li>
-                </ul>
+        <header className="flex items-center justify-between bg-slate-200 shadow-cyan-5/50 text-black h-24 px-4">
+            <button onClick={toggleSidebar} className="text-2xl">
+                ☰
+            </button>
+            <h1 className="text-4xl font-extrabold text-blue-800">Da.PREMPEH</h1>
+            <nav className="flex space-x-4 w-1/3 justify-between">
+                <a href="/" className="text-1/5xl font-extrabold text-black-500">Home</a>
+                <a href="/about" className="text-1/5xl font-extrabold text-black-500">About Me</a>
+                <a href="/projects" className="text-1/5xl font-extrabold text-black-500">Projects</a>
+                <a href="/skills" className="text-1/5xl font-extrabold text-black-500">Skills</a>
+                <a href="/testimonials" className="text-1/5xl font-extrabold text-black-500">Testimonials</a>
+                <a href="/contact" className="text-1/5xl font-extrabold text-black-500">Contact</a>
             </nav>
+            <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
         </header>
     );
 };

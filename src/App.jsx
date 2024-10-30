@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Stack from './pages/Stack';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Services from './pages/Services';
-import Projects from './pages/Projects';
+import Home from './pages/Home';
+import About from './pages/About'
+import Projects from './pages/Projects'
+import Testimonials from './pages/Testimonials';
+import Skills from './pages/Skills'
 import Contact from './pages/Contact'
+
 
 const App = () => {
     return (
@@ -15,9 +17,10 @@ const App = () => {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/stack" element={<Stack />} />
-                    <Route path="/service" element={<Services />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/testimonials" element={<Testimonials />} />
+                    <Route path="/skills" element={<Skills />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>
                 <Footer />
