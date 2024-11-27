@@ -7,11 +7,11 @@ const Skills = () => {
 
                 {/* Programming Languages Section */}
                 <div>
-                    <h2 className="text-2xl font-bold mb-6">Programming Languages</h2>
+                    <h2 className="text-1xl font-bold mb-6">Programming Languages</h2>
                     <div className="flex flex-wrap justify-center gap-8">
                         <div className="skill-card w-48">
                             <div className="rounded-full bg-gray-800 text-white w-24 h-24 mx-auto flex items-center justify-center shadow-lg mb-4">
-                                <span className="text-2xl">&lt;HTML/&gt;</span>
+                                <span className="text-1xl">&lt;HTML/&gt;</span>
                             </div>
                             <h3 className="text-lg font-semibold">HTML</h3>
                             <p className="text-sm text-gray-600">The backbone of every website on the world wide web.</p>
@@ -19,7 +19,7 @@ const Skills = () => {
 
                         <div className="skill-card w-48">
                             <div className="rounded-full bg-gray-800 text-white w-24 h-24 mx-auto flex items-center justify-center shadow-lg mb-4">
-                                <span className="text-2xl">.CSS()</span>
+                                <span className="text-1xl">.CSS & Tailwind</span>
                             </div>
                             <h3 className="text-lg font-semibold">CSS</h3>
                             <p className="text-sm text-gray-600">Without CSS, the web would be a very ugly place.</p>
@@ -27,7 +27,7 @@ const Skills = () => {
 
                         <div className="skill-card w-48">
                             <div className="rounded-full bg-gray-800 text-white w-24 h-24 mx-auto flex items-center justify-center shadow-lg mb-4">
-                                <span className="text-2xl">JavaScript</span>
+                                <span className="text-1xl">JavaScript</span>
                             </div>
                             <h3 className="text-lg font-semibold">JavaScript</h3>
                             <p className="text-sm text-gray-600">Complex code to create immersive and rich experiences.</p>
@@ -37,11 +37,11 @@ const Skills = () => {
 
                 {/* Frameworks Section */}
                 <div>
-                    <h2 className="text-2xl font-bold mb-6">Frameworks</h2>
+                    <h2 className="text-1xl font-bold mb-6">Frameworks</h2>
                     <div className="flex flex-wrap justify-center gap-8">
                         <div className="skill-card w-48">
                             <div className="rounded-full bg-gray-800 text-white w-24 h-24 mx-auto flex items-center justify-center shadow-lg mb-4">
-                                <span className="text-2xl">&lt;React&gt;</span>
+                                <span className="text-1xl">&lt;React&gt;</span>
                             </div>
                             <h3 className="text-lg font-semibold">React</h3>
                             <p className="text-sm text-gray-600">For creating dynamic and easy-to-update websites.</p>
@@ -49,7 +49,7 @@ const Skills = () => {
 
                         <div className="skill-card w-48">
                             <div className="rounded-full bg-gray-800 text-white w-24 h-24 mx-auto flex items-center justify-center shadow-lg mb-4">
-                                <span className="text-2xl">&lt;Express&gt;</span>
+                                <span className="text-1xl">&lt;Express&gt;</span>
                             </div>
                             <h3 className="text-lg font-semibold">Express</h3>
                             <p className="text-sm text-gray-600">For building robust server-side applications.</p>
@@ -59,11 +59,11 @@ const Skills = () => {
 
                 {/* Database Section */}
                 <div>
-                    <h2 className="text-2xl font-bold mb-6">Database</h2>
+                    <h2 className="text-1xl font-bold mb-6">Database</h2>
                     <div className="flex flex-wrap justify-center gap-8">
                         <div className="skill-card w-48">
                             <div className="rounded-full bg-gray-800 text-white w-24 h-24 mx-auto flex items-center justify-center shadow-lg mb-4">
-                                <span className="text-2xl">&lt;MongoDB&gt;</span>
+                                <span className="text-1xl">&lt;MongoDB&gt;</span>
                             </div>
                             <h3 className="text-lg font-semibold">MongoDB</h3>
                             <p className="text-sm text-gray-600">A NoSQL database for dynamic and scalable applications.</p>

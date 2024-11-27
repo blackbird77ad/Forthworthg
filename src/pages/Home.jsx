@@ -1,6 +1,6 @@
 import React from 'react';
-import profilePic from "../assets/images/new1.png"; // Ensure this path is correct
-
+import { Link } from 'react-router-dom';
+import profilePic from "../assets/images/mprofile.jpg"; 
 const Homepage = () => {
     return (
         <div className="h-[77vh] flex flex-col items-center bg-slate-100 text-gray-800 px-4">
@@ -16,26 +16,32 @@ const Homepage = () => {
                         I specialize in building scalable, efficient server-side applications and APIs, with expertise in modern web technologies like Node.js, Express, and MongoDB.
                     </p>
                     <div className="flex space-x-4 mt-4">
-                        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-                            View Projects
-                        </button>
-                        <button className="text-blue-600 hover:underline">
-                            Contact Me
-                        </button>
+                        <Link to='/projects'>
+                            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                                View Projects
+                            </button>
+                        </Link>
+
+                        {/* linked to my contact form */}
+                        <Link to='/contact'>
+                            <button className="text-blue-600 hover:underline">
+                                Contact Me
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
                 {/* Image and Highlight Section */}
                 <div className="relative md:w-1/2 mt-8 md:mt-0 flex items-center justify-center">
                     <img
-                        src={profilePic} // Use the imported image here
+                        src={profilePic}   
                         alt="Profile"
-                        className="w-56 h-56 rounded-full shadow-lg" // Increased image size
+                        className="w-48 h-80 rounded-md object-contain" 
                     />
-                    <div className="absolute top-0 right-0 bg-blue-600 text-white rounded-full p-2 transform translate-x-8 -translate-y-8">
-                        <span className="text-xl font-bold">3 Months</span>
+                    {/* <div className="absolute top-0 right-0 bg-blue-600 text-white rounded-full p-2 transform translate-x-8 -translate-y-8">
+                        <span className="text-xl font-bold">3Months</span>
                         <p className="text-sm">Experience</p>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 

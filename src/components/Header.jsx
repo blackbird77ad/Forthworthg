@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,10 +14,12 @@ const Header = () => {
             <button onClick={toggleSidebar} className="text-2xl">
                 ☰
             </button>
-            <h1 className="text-4xl font-extrabold text-blue-800">Da.PREMPEH</h1>
+           <Link to='/'>
+                <h1 className="text-4xl font-extrabold text-blue-800">Da.PREMPEH</h1>
+           </Link>
             <nav className="flex space-x-4 w-1/3 justify-between">
                 <a href="/" className="text-1/5xl font-extrabold text-black-500">Home</a>
-                <a href="/about" className="text-1/5xl font-extrabold text-black-500">About Me</a>
+                <a href="/about" className="text-1/5xl font-extrabold text-black-500">AboutMe</a>
                 <a href="/projects" className="text-1/5xl font-extrabold text-black-500">Projects</a>
                 <a href="/skills" className="text-1/5xl font-extrabold text-black-500">Skills</a>
                 <a href="/testimonials" className="text-1/5xl font-extrabold text-black-500">Testimonials</a>
