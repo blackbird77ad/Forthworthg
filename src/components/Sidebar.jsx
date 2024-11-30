@@ -24,7 +24,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                             Resume
                         </a>
                         <a
-                            href="https://savefiles.org/drive/s/nARuZ8NCzYx9AnScTtV7soi6m4CBGe"
+                            href="https://savefiles.org/drive/s/0o8YqzdcJFU1TM32aaUatQ6eSwQfJp"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-600 hover:underline text-sm"
@@ -44,7 +44,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                         <FaEnvelope /> <span>Email</span>
                     </a>
                     <a
-                        href="https://wa.me/233558060103"
+                        href="https://wa.me/233501657205"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-blue-600 hover:underline"
@@ -60,7 +60,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                         <a href="https://github.com/blackbird77ad" target="_blank" rel="noopener noreferrer">
                             <FaGithub className="text-2xl text-blue-600 hover:text-gray-800" />
                         </a>
-                        <a href="https://linkedin.com/in/ydavidaaprempeh" target="_blank" rel="noopener noreferrer">
+                        <a href="https://linkedin.com/in/davidaaprempeh" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin className="text-2xl text-blue-600 hover:text-gray-800" />
                         </a>
                     </div>

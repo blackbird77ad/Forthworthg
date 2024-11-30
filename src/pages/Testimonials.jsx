@@ -2,7 +2,7 @@ import React from 'react';
 
 const Testimonials = () => {
     return (
-        <div className="flex justify-center items-center min-h-[79vh] bg-gray-100 p-8">
+        <div className="flex justify-center items-center h-[73vh] bg-gray-100 p-8">
             <div className="max-w-6xl text-center">
                 <h2 className="text-3xl font-bold mb-10">What My Team Says About Me</h2>
 
@@ -15,7 +15,7 @@ const Testimonials = () => {
                             "Working with this Davida was a fantastic experience. She delivered exactly what I needed and exceeded my expectations. Highly recommend!"
                         </p>
                         <h3 className="text-lg font-semibold text-blue-800">Etheldrah Akahoho</h3>
-                        <p className="text-sm text-gray-500">CEO, Example Corp</p>
+                        <p className="text-sm text-gray-500">Frontend Developer</p>
                     </div>
 
                     {/* Testimonial Card 2 */}
@@ -23,18 +23,18 @@ const Testimonials = () => {
                         <p className="text-gray-700 mb-4">
                             "Her attention to detail and commitment to quality is unmatched. I'm thoroughly impressed with the final product."
                         </p>
-                        <h3 className="text-lg font-semibold text-blue-800">Delanyo Joseph</h3>
-                        <p className="text-sm text-gray-500">CTO, Tech Solutions</p>
+                        <h3 className="text-lg font-semibold text-blue-800">Delanyo Jacob</h3>
+                        <p className="text-sm text-gray-500">Backend Developer</p>
                     </div>
 
                     {/* Testimonial Card 3 */}
-                    {/* <div className="bg-white p-6 rounded-lg shadow-lg">
+                    <div className="bg-white p-6 rounded-lg shadow-lg">
                         <p className="text-gray-700 mb-4">
-                            "A team that truly cares about their clients and goes the extra mile to ensure satisfaction. Would definitely work with them again."
+                            "Miss Davida truly cares about our clients and goes the extra mile to ensure satisfaction. Would definitely work with her again."
                         </p>
-                        <h3 className="text-lg font-semibold text-blue-800">Michael Lee</h3>
-                        <p className="text-sm text-gray-500">Manager, Business Co.</p>
-                    </div> */}
+                        <h3 className="text-lg font-semibold text-blue-800">Anna Takyiwaa</h3>
+                        <p className="text-sm text-gray-500">UI designer</p>
+                    </div>
 
                     {/* Additional Testimonial Cards */}
                     {/* <div className="bg-white p-6 rounded-lg shadow-lg">

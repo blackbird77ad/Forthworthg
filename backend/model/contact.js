@@ -12,4 +12,4 @@ const contactSchema = new Schema({
 
 contactSchema.plugin(toJSON);
 
-export const ContactModel = model('contact', contactSchema)
+export const ContactModel = model('Contact', contactSchema)

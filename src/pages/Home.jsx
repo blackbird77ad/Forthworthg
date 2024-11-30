@@ -8,12 +8,12 @@ const Homepage = () => {
             {/* Hero Section */}
             <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left w-full max-w-5xl mt-10">
                 <div className="flex flex-col items-start space-y-4 md:w-1/2">
-                    <p className="text-gray-500">Explore my backend development skills</p>
+                    <p className="text-gray-500">Explore my Web development skills</p>
                     <h1 className="text-5xl font-bold text-blue-700 leading-tight">
-                        Backend Web Developer
+                        Junior Web Developer
                     </h1>
                     <p className="text-gray-600">
-                        I specialize in building scalable, efficient server-side applications and APIs, with expertise in modern web technologies like Node.js, Express, and MongoDB.
+                        I specialize in building scalable, efficient server-side applications and APIs, with expertise in modern web technologies like Node.js, React, Express, and MongoDB.
                     </p>
                     <div className="flex space-x-4 mt-4">
                         <Link to='/projects'>
