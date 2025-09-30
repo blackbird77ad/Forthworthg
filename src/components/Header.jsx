@@ -1,33 +1,40 @@
-import React, { useState } from 'react';
-import Sidebar from './Sidebar';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+
+import Logo from '../assets/images/forthworth.png';
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  return (
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-[9999]">
+      <nav className="flex items-center justify-between px-6 py-4">
+        {/* Logo Section */}
+        <div className="flex items-center space-x-2">
+          <img src={Logo} alt="Forthworth G Logo" className="h-10 w-auto" />
+        </div>
 
-    const toggleSidebar = () => {
-        setIsOpen(!isOpen);
-    };
+        {/* Navigation Links */}
+        <ul className="flex space-x-6 text-gray-700 font-medium">
+          <li><Link to="/" className="hover:text-blue-500 transition">HOME</Link></li>
+          <li><Link to="/about" className="hover:text-blue-500 transition">ABOUT US</Link></li>
+          <li><Link to="/services" className="hover:text-blue-500 transition">SERVICES</Link></li>
+          <li><Link to="/profiles" className="hover:text-blue-500 transition">PROFILES</Link></li>
+          {/* <li><Link to="/contact" className="hover:text-blue-500 transition"></Link></li> */}
+         
+          <Link
+  to="footer"
+  smooth={true}
+  duration={500}
+  offset={-50} // Adjust this if you have a fixed nav bar
+  className="bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+>
+  Contact Us
+</Link>
 
-    return (
-        <header className="flex items-center justify-between bg-slate-200 shadow-cyan-5/50 text-black h-24 px-4">
-            <button onClick={toggleSidebar} className="text-2xl">
-                ☰
-            </button>
-           <Link to='/'>
-                <h1 className="text-4xl font-extrabold text-blue-800">Da.PREMPEH</h1>
-           </Link>
-            <nav className="flex space-x-4 w-1/3 justify-between">
-                <a href="/" className="text-1/5xl font-extrabold text-black-500">Home</a>
-                <a href="/about" className="text-1/5xl font-extrabold text-black-500">AboutMe</a>
-                <a href="/projects" className="text-1/5xl font-extrabold text-black-500">Projects</a>
-                <a href="/skills" className="text-1/5xl font-extrabold text-black-500">Skills</a>
-                <a href="/testimonials" className="text-1/5xl font-extrabold text-black-500">Testimonials</a>
-                <a href="/contact" className="text-1/5xl font-extrabold text-black-500">Contact</a>
-            </nav>
-            <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
-        </header>
-    );
+        </ul>
+
+      </nav>
+    </header>
+  );
 };
 
 export default Header;
