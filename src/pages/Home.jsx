@@ -56,64 +56,57 @@ const Home = () => {
 
   return (
     <>
-      {/* ================= HERO SLIDER ================= */}
-      <section className="relative w-full h-screen bg-cover bg-center transition-all duration-1000"
+      
+      {/* ================= HERO SECTION ================= */}
+<section
+  className="relative w-full h-[70vh] bg-cover bg-center transition-all duration-1000"
   style={{ backgroundImage: `url(${slides[current].image})` }}
 >
-  {/* Semi-transparent overlay to dim the image */}
+  {/* Overlay */}
   <div className="absolute inset-0 bg-black/40"></div>
 
-  {/* Text content */}
-  <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6">
-    <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white
-  drop-shadow-[1px_1px_0_rgba(0,0,0,1)]
-  drop-shadow-[-1px_-1px_0_rgba(0,0,0,1)]
-  drop-shadow-[1px_-1px_0_rgba(0,0,0,1)]
-  drop-shadow-[-1px_1px_0_rgba(0,0,0,1)]
-  drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]">
-  {slides[current].title}
-</h1>
-
-    <h2 className="text-xl md:text-3xl font-semibold mt-3 text-white
-  drop-shadow-[0_2px_5px_rgba(0,0,0,0.9)]
-  drop-shadow-[0_0_8px_rgba(0,0,0,0.8)]">
-  {slides[current].subtitle}
-</h2>
-
-<p className="mt-6 max-w-2xl text-sm md:text-lg text-white
-  drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
-  {slides[current].description}
-</p>
-
+  {/* Text */}
+  <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full px-6">
+    <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-[2px_2px_6px_rgba(0,0,0,0.8)]">
+      {slides[current].title}
+    </h1>
+    <h2 className="text-xl md:text-3xl font-semibold mt-3 drop-shadow-[1px_1px_4px_rgba(0,0,0,0.7)]">
+      {slides[current].subtitle}
+    </h2>
+    <p className="mt-6 max-w-2xl text-sm md:text-lg drop-shadow-[1px_1px_3px_rgba(0,0,0,0.6)]">
+      {slides[current].description}
+    </p>
 
     <div className="mt-8 flex flex-wrap justify-center gap-4">
-      <button className="bg-blue-600 border border-white hover:bg-red-700 px-8 py-3 rounded text-sm font-semibold">
+      <button className="bg-blue-600 hover:bg-red-700 px-8 py-3 rounded text-sm font-semibold">
         Our Services
       </button>
-      <button className="border border-blue-100 px-8 py-3 rounded text-blue-600 hover:text-white hover:bg-red-700  text-sm font-semibold">
+      <button className="border border-blue-600 px-8 py-3 rounded text-blue-600 hover:text-white hover:bg-red-700 text-sm font-semibold">
         Contact Us
       </button>
     </div>
   </div>
 
-  {/* Prev / Next arrows */}
+  {/* ===== NAVIGATION ARROWS ===== */}
   <button
     onClick={() =>
-      setCurrent(current === 0 ? slides.length - 1 : current - 1)
+      setCurrent(prev => (prev === 0 ? slides.length - 1 : prev - 1))
     }
-    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 p-3 rounded-full hover:bg-black/70 text-white text-2xl"
+    className="absolute top-1/2 left-6 transform -translate-y-1/2 text-white text-3xl p-3 rounded-full bg-black/30 hover:bg-black/50 transition"
   >
-    ‹
+    &#8592;
   </button>
+
   <button
     onClick={() =>
-      setCurrent(current === slides.length - 1 ? 0 : current + 1)
+      setCurrent(prev => (prev === slides.length - 1 ? 0 : prev + 1))
     }
-    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 p-3 rounded-full hover:bg-black/70 text-white text-2xl"
+    className="absolute top-1/2 right-6 transform -translate-y-1/2 text-white text-3xl p-3 rounded-full bg-black/30 hover:bg-black/50 transition"
   >
-    ›
+    &#8594;
   </button>
 </section>
+
 
 
 
@@ -157,6 +150,8 @@ const Home = () => {
         </div>
       </section>
 
+      
+
       {/* ================= SERVICES ================= */}
       <section className="bg-white py-20 px-6 lg:px-20">
         <div className="max-w-6xl mx-auto text-center">
@@ -185,6 +180,26 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+
+<section className="bg-gray-100 py-20 px-6">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-3xl font-bold mb-10">Featured Projects</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div className="bg-gray-300 h-48 rounded mb-4 flex items-center justify-center">
+            Project Image
+          </div>
+          <h3 className="font-semibold text-xl mb-2">Project {i}</h3>
+          <p className="text-gray-600 text-sm">
+            Brief description of project impact, scope, and value.
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= TRADE DELEGATIONS ================= */}
       <section className="bg-gray-100 py-20 px-6 lg:px-20">
@@ -205,6 +220,44 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className="bg-white py-20 px-6">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-3xl font-bold mb-10">What Clients Say</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {["Client A", "Client B", "Client C"].map((client, i) => (
+        <div key={i} className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <p className="text-gray-700 italic mb-4">
+            "ForthWorth G. helped us structure and execute our international project flawlessly."
+          </p>
+          <h4 className="font-semibold">{client}</h4>
+          <p className="text-gray-500 text-sm">CEO / Organization</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section className="bg-gray-50 py-20 px-6">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-3xl font-bold mb-10">Insights & Resources</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <div className="bg-gray-300 h-40 rounded mb-4 flex items-center justify-center">
+            Resource {i} Image/Video
+          </div>
+          <h3 className="font-semibold text-lg mb-2">Resource {i}</h3>
+          <p className="text-gray-600 text-sm">
+            Downloadable guide, case study, or short video to showcase expertise.
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* ================= FINAL CTA ================= */}
       <section className="bg-blue-600 py-16 text-white text-center px-6">

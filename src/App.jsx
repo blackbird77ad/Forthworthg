@@ -4,7 +4,7 @@ import Footer from './components/Footer.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
-import Profiles from './pages/Profiles.jsx';
+import Profiles from './pages/Profile.jsx';
 import Contact from './pages/Contact.jsx';
 
 const App = () => {
