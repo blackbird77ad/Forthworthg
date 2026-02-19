@@ -1,155 +1,121 @@
+import React from "react";
+import ceoImg from "../assets/images/goh.jpg";
+import noshImg from "../assets/images/nosh.jpg";
+import dummyImg from "../assets/images/business-meeting.jpg";
+
 const team = [
   {
-    name: "Executive Director",
-    role: "Strategy & Global Partnerships",
-    bio: "Leads the firm’s strategic direction, international partnerships, and high-level advisory engagements across public and private sectors."
+    name: "Gilbert O. H.",
+    role: "Founder & Chief Executive Officer",
+    type: "Leadership",
+    image: ceoImg,
+    bio: "Provides strategic leadership for ForthWorth, guiding partnerships, investment facilitation, and high-impact advisory services across public, private, and international development sectors."
   },
   {
-    name: "Head of Consulting",
-    role: "Business & Government Advisory",
-    bio: "Provides structured consulting support for governments, corporations, and investors navigating complex projects and markets."
+    name: "Noshie Iddisah",
+    role: "Senior Consultant – Grants & Operations",
+    type: "Consultant",
+    image: noshImg,
+    bio: "Grants management specialist with 25+ years of experience designing grant systems, strengthening compliance frameworks, managing fiduciary risks, and delivering donor-funded programmes."
   },
   {
-    name: "Director of Projects",
-    role: "Infrastructure & Construction",
-    bio: "Oversees project facilitation across building, construction, and infrastructure developments."
+    name: "Consultant",
+    role: "Programme & Project Advisory",
+    type: "Consultant",
+    image: dummyImg,
+    bio: "Supports project structuring, stakeholder coordination, and implementation oversight to ensure efficient delivery, accountability, and measurable outcomes."
   },
   {
-    name: "Trade & Investment Lead",
-    role: "International Business",
-    bio: "Supports cross-border trade, investment sourcing, and strategic business linkages."
-  },
-  {
-    name: "Procurement Advisor",
-    role: "Sourcing & Supply Chain",
-    bio: "Facilitates procurement strategy, supplier engagement, and purchasing advisory services."
-  },
-  {
-    name: "Legal & Compliance Advisor",
-    role: "Governance & Risk",
-    bio: "Ensures regulatory alignment, governance structures, and compliance across engagements."
-  },
-  {
-    name: "Operations Manager",
-    role: "Execution & Delivery",
-    bio: "Coordinates internal operations, stakeholder communication, and project execution support."
+    name: "Consultant",
+    role: "Finance, Risk & Compliance",
+    type: "Consultant",
+    image: dummyImg,
+    bio: "Provides financial advisory, risk assessment, and compliance support to strengthen governance, transparency, and institutional sustainability."
   }
 ];
 
 const Profile = () => {
   return (
-    <>
-      {/* ================= HERO ================= */}
-      <section className="bg-gray-900 text-white py-28 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-lg">
-            Our Leadership & Team
+    <div className="bg-gray-50 min-h-screen">
+      
+      {/* HERO */}
+      <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-24 px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Leadership & Consultants
           </h1>
-          <p className="mt-6 max-w-3xl mx-auto text-gray-300 text-lg">
-            A multidisciplinary team of professionals bringing experience,
-            integrity, and strategic insight to every engagement.
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+            Our team brings together experienced professionals in strategic
+            advisory, programme delivery, financial governance, and institutional
+            strengthening to support complex projects and cross-border initiatives.
           </p>
         </div>
       </section>
 
-      {/* ================= INTRO ================= */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Built on Expertise & Trust
-          </h2>
-          <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            ForthWorth G. is driven by a team of experienced professionals with
-            backgrounds spanning consulting, government projects, construction,
-            international trade, and strategic partnerships. Our collective
-            expertise enables us to deliver clarity, structure, and results.
-          </p>
-        </div>
-      </section>
+      {/* TEAM GRID */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {team.map((member, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 flex flex-col"
+            >
+              {/* Image */}
+              <div className="h-72 overflow-hidden rounded-t-xl">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-      {/* ================= TEAM GRID ================= */}
-      <section className="bg-gray-50 py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-14">
-            Meet the Team
-          </h2>
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-grow">
+                {/* Tag */}
+                <span
+                  className={`text-xs font-semibold mb-2 ${
+                    member.type === "Leadership"
+                      ? "text-blue-700"
+                      : "text-gray-500"
+                  }`}
+                >
+                  {member.type}
+                </span>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition flex flex-col"
-              >
-                {/* Avatar */}
-                <div className="w-24 h-24 rounded-full bg-gray-300 mb-6 self-center flex items-center justify-center text-gray-600 text-sm">
-                  Avatar
-                </div>
-
-                <h3 className="text-xl font-semibold text-center">
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   {member.name}
                 </h3>
-                <p className="text-blue-600 text-sm text-center mt-1">
+
+                <p className="text-sm font-medium text-blue-700 mb-3">
                   {member.role}
                 </p>
 
-                <p className="text-gray-600 text-sm mt-4 text-center leading-relaxed flex-grow">
+                <p className="text-gray-600 text-sm leading-relaxed flex-grow">
                   {member.bio}
                 </p>
-
-                <button className="mt-6 border border-blue-600 text-blue-600 py-2 rounded font-medium hover:bg-blue-600 hover:text-white transition">
-                  Read More
-                </button>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ================= CREDIBILITY SECTION ================= */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-10">
-            Why Clients Trust ForthWorth G.
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-            <div>
-              <h4 className="font-semibold mb-2">Multidisciplinary Expertise</h4>
-              <p className="text-gray-600 text-sm">
-                Our team combines consulting, technical, commercial, and public-sector experience.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-2">Global Perspective</h4>
-              <p className="text-gray-600 text-sm">
-                We operate across borders, aligning international standards with local realities.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-2">Integrity & Structure</h4>
-              <p className="text-gray-600 text-sm">
-                Every engagement is guided by governance, transparency, and long-term value.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ================= CTA ================= */}
-      <section className="bg-blue-600 py-20 text-white text-center px-6">
+      {/* CTA */}
+      <section className="bg-blue-700 py-16 text-center text-white px-6">
         <h2 className="text-3xl font-bold mb-4">
-          Partner with a Team You Can Trust
+          Work With Our Experts
         </h2>
-        <p className="mb-8 text-gray-100">
-          Speak with our leadership team to explore collaboration opportunities.
+        <p className="max-w-2xl mx-auto text-blue-100 mb-6">
+          Our consultants support governments, investors, and organizations
+          in structuring opportunities and delivering high-impact results.
         </p>
-        <button className="bg-white text-blue-600 px-10 py-3 rounded font-semibold hover:bg-gray-100 transition">
-          Contact Us
-        </button>
+        <a
+          href="/contact"
+          className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+        >
+          Contact Our Team
+        </a>
       </section>
-    </>
+    </div>
   );
 };
 

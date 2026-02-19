@@ -9,38 +9,38 @@ import slide5 from "../assets/images/business-meeting.jpg";
 const slides = [
   {
     image: slide1,
-    title: "CONNECTING OPPORTUNITY",
-    subtitle: "STRUCTURING SUCCESS",
+    title: "Connecting Opportunity",
+    subtitle: "Structuring Success. Delivering Results.",
     description:
-      "Global business facilitation and advisory services connecting the right people to the right opportunities.",
+      "Global business facilitation and advisory firm based in Accra, Ghana. Connecting the right people to the right opportunities across borders.",
   },
   {
     image: slide2,
-    title: "TRUSTED ADVISORY",
-    subtitle: "ACROSS BORDERS",
+    title: "Trusted Advisory",
+    subtitle: "Across Borders",
     description:
-      "We support organizations navigating complex markets with confidence and clarity.",
+      "Over two decades of experience supporting organizations navigating complex markets with confidence.",
   },
   {
     image: slide3,
-    title: "FAST & SECURE",
-    subtitle: "TRADE FACILITATION",
+    title: "Efficient Procurement",
+    subtitle: "Secure & Reliable",
     description:
-      "Delivering seamless procurement and trade execution worldwide.",
+      "Simplifying cross-border sourcing, compliance, and logistics for seamless execution.",
   },
   {
     image: slide4,
-    title: "STRATEGIC PARTNERSHIPS",
-    subtitle: "BUILT TO LAST",
+    title: "Strategic Partnerships",
+    subtitle: "Built for Impact",
     description:
-      "Transforming relationships into high-impact business outcomes.",
+      "We translate relationships into measurable commercial results.",
   },
   {
     image: slide5,
-    title: "GLOBAL REACH",
-    subtitle: "LOCAL EXPERTISE",
+    title: "Global Reach",
+    subtitle: "Local Expertise",
     description:
-      "International standards grounded in deep African market insight.",
+      "International standards combined with deep African market insight.",
   },
 ];
 
@@ -48,12 +48,11 @@ const Home = () => {
   const [current, setCurrent] = useState(0);
   const sliderRef = useRef(null);
 
-  // Start auto slider
   const startAutoSlide = () => {
     clearInterval(sliderRef.current);
     sliderRef.current = setInterval(() => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 12000);
+    }, 7000);
   };
 
   useEffect(() => {
@@ -63,96 +62,87 @@ const Home = () => {
 
   return (
     <>
-      {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO ================= */}
       <section
-        className="relative w-full h-[70vh] bg-cover bg-center transition-all duration-700"
+        className="relative w-full min-h-screen bg-cover bg-center transition-all duration-700"
         style={{ backgroundImage: `url(${slides[current].image})` }}
       >
-        {/* Overlay (does NOT block clicks) */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        {/* Navy overlay */}
+        <div className="absolute inset-0 bg-[#0B1F3A]/70"></div>
 
-        {/* Text */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white h-full px-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight drop-shadow-[2px_2px_6px_rgba(0,0,0,0.85)]">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center text-white min-h-screen px-6">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-4xl">
             {slides[current].title}
           </h1>
 
-          <h2 className="text-xl md:text-3xl font-semibold mt-3 drop-shadow-[1px_1px_4px_rgba(0,0,0,0.75)]">
+          <h2 className="text-xl md:text-3xl mt-4 font-semibold text-[#C8A24A]">
             {slides[current].subtitle}
           </h2>
 
-          <p className="mt-6 max-w-2xl text-sm md:text-lg drop-shadow-[1px_1px_3px_rgba(0,0,0,0.7)]">
+          <p className="mt-6 max-w-2xl text-sm md:text-lg text-gray-200">
             {slides[current].description}
           </p>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <button className="bg-blue-600 hover:bg-red-700 px-8 py-3 rounded text-sm font-semibold">
+          <div className="mt-10 flex flex-wrap gap-4 justify-center">
+            <button className="bg-[#0B1F3A] border border-[#C8A24A] hover:bg-[#C8A24A] hover:text-[#0B1F3A] px-8 py-3 rounded font-semibold transition">
               Our Services
             </button>
-            <button className="border border-blue-600 px-8 py-3 rounded text-blue-600 hover:text-white hover:bg-red-700 text-sm font-semibold">
+            <button className="bg-[#C8A24A] text-[#0B1F3A] hover:opacity-90 px-8 py-3 rounded font-semibold transition">
               Contact Us
             </button>
           </div>
         </div>
 
-        {/* PREV */}
-        <button
-          onClick={() => {
-            clearInterval(sliderRef.current);
-            setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-            startAutoSlide();
-          }}
-          className="absolute top-1/2 left-6 -translate-y-1/2 z-20
-                     text-white text-3xl p-3 rounded-full
-                     bg-black/40 hover:bg-black/60 transition"
-        >
-          &#8592;
-        </button>
-
-        {/* NEXT */}
-        <button
-          onClick={() => {
-            clearInterval(sliderRef.current);
-            setCurrent((prev) =>
-              prev === slides.length - 1 ? 0 : prev + 1
-            );
-            startAutoSlide();
-          }}
-          className="absolute top-1/2 right-6 -translate-y-1/2 z-20
-                     text-white text-3xl p-3 rounded-full
-                     bg-black/40 hover:bg-black/60 transition"
-        >
-          &#8594;
-        </button>
+        {/* Slider dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-3 h-3 rounded-full ${
+                current === index ? "bg-[#C8A24A]" : "bg-white/50"
+              }`}
+            />
+          ))}
+        </div>
       </section>
 
-      {/* ================= QUICK STATS ================= */}
-      <section className="bg-white py-14">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
-          <div>
-            <h3 className="text-3xl font-bold text-blue-600">20+</h3>
-            <p className="text-gray-600 mt-1">Years Experience</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-blue-600">30+</h3>
-            <p className="text-gray-600 mt-1">Trade Delegations</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-blue-600">Global</h3>
-            <p className="text-gray-600 mt-1">Market Reach</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold text-blue-600">Millions</h3>
-            <p className="text-gray-600 mt-1">Deals Facilitated</p>
+      {/* ================= IMPACT ================= */}
+      <section className="bg-[#F5F7FA] py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-12 text-[#0B1F3A]">
+            Our Impact
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div>
+              <h3 className="text-4xl font-bold text-[#0B1F3A]">20+</h3>
+              <p className="text-gray-600 mt-2">Years of Experience</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold text-[#0B1F3A]">30+</h3>
+              <p className="text-gray-600 mt-2">Trade Delegations Hosted</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold text-[#0B1F3A]">Global</h3>
+              <p className="text-gray-600 mt-2">Reach</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-bold text-[#0B1F3A]">Millions</h3>
+              <p className="text-gray-600 mt-2">Deals Facilitated</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ================= WHO WE ARE ================= */}
-      <section className="bg-gray-50 py-20 px-6 lg:px-20">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      {/* ================= ABOUT ================= */}
+      <section className="bg-white py-24 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
+            <div className="w-12 h-1 bg-[#C8A24A] mb-6"></div>
+            <h2 className="text-3xl font-bold text-[#0B1F3A] mb-6">
+              About ForthWorth G.
+            </h2>
             <p className="text-gray-600 leading-relaxed">
               ForthWorth G. is a global business facilitation and advisory firm
               based in Accra, Ghana. We specialize in deal structuring,
@@ -160,33 +150,48 @@ const Home = () => {
               connecting the right people to the right opportunities across
               borders.
             </p>
+            <p className="text-gray-600 leading-relaxed mt-4">
+              With over two decades of experience and a globally connected
+              network, we translate relationships into measurable business
+              results.
+            </p>
           </div>
-          <div className="bg-gray-300 h-64 rounded-lg" />
+
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img
+              src={slide5}
+              alt="Business meeting"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section className="bg-white py-20 px-6 lg:px-20">
+      <section className="bg-[#F5F7FA] py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">What We Do</h2>
+          <h2 className="text-3xl font-bold text-[#0B1F3A] mb-14">
+            Our Services
+          </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {[
-              "Deal Structuring Advisory",
+              "Transaction & Deal Structuring Advisory",
               "Procurement & Purchasing Facilitation",
-              "Business Consulting & Linkages",
-              "Cross-Border Trade Facilitation",
-              "Trade Delegation Advisory",
-              "Strategic Partnership Development",
+              "Business Linkages & Consulting",
+              "Trade Delegation & Visit Advisory",
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-lg transition"
+                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-xl transition hover:-translate-y-1"
               >
-                <h3 className="text-lg font-semibold mb-3">{service}</h3>
+                <div className="w-10 h-1 bg-[#C8A24A] mb-4"></div>
+                <h3 className="font-semibold text-[#0B1F3A] mb-3">
+                  {service}
+                </h3>
                 <p className="text-gray-600 text-sm">
-                  Tailored solutions designed to deliver measurable commercial
-                  impact and long-term value.
+                  Bespoke solutions aligned with your strategic objectives,
+                  ensuring efficiency, compliance, and measurable value.
                 </p>
               </div>
             ))}
@@ -194,16 +199,46 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ================= CEO ================= */}
+      <section className="bg-[#0B1F3A] py-24 px-6 text-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img
+              src={slide4}
+              alt="CEO"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-3xl font-bold mb-4">
+              Leadership
+            </h2>
+            <h3 className="text-xl text-[#C8A24A] font-semibold mb-4">
+              Gilbert Ossei Hyeamann
+            </h3>
+            <p className="text-gray-200 leading-relaxed">
+              Founder & CEO of ForthWorth G., Gilbert Ossei Hyeamann brings over
+              20 years of experience in deal structuring, procurement, and
+              international trade facilitation. He has successfully hosted
+              high-level delegations and facilitated millions in investment
+              partnerships across multiple sectors.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ================= FINAL CTA ================= */}
-      <section className="bg-blue-600 py-16 text-white text-center px-6">
-        <h2 className="text-3xl font-bold mb-4">
-          Let’s Build Your Next Opportunity
+      <section className="bg-[#C8A24A] py-20 text-center px-6">
+        <h2 className="text-3xl font-bold text-[#0B1F3A] mb-4">
+          Let’s Build Your Next Opportunity Together
         </h2>
-        <p className="mb-6 text-gray-100">
-          Speak with our advisory team today.
+        <p className="text-gray-800 mb-6 max-w-2xl mx-auto">
+          Have a trade, procurement, or partnership interest in Africa? Speak
+          to the ForthWorth G. team today.
         </p>
-        <button className="bg-white text-blue-600 px-10 py-3 rounded font-semibold">
-          Contact Us
+        <button className="bg-[#0B1F3A] text-white px-10 py-3 rounded font-semibold hover:opacity-90">
+          Contact ForthWorth G.
         </button>
       </section>
     </>
