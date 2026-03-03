@@ -1,233 +1,192 @@
-import ceoImg from "../assets/images/goh.jpg";
+import React from "react";
+import { Link } from "react-router-dom"; // or "next/link" if using Next.js
+
+// Images
+import heroImg from "../assets/images/final-about-hero-image.avif";
+import whoWeAreImg from "../assets/images/who-we-are.jpg";
+import opportunityImg from "../assets/images/deal-structuring-money-house-human-img.jpg";
+import dealStructuringImg from "../assets/images/Implementation-Support.jpg";
+import implementationImg from "../assets/images/handshake.jpg"; // updated
 
 const About = () => {
-  const bridges = [
-    "Businesses to Government Opportunities",
-    "Investors to Bankable Projects",
-    "International Firms to African Markets",
-    "Developers to Strategic Resources",
-    "Institutions to Trusted Partners",
-    "Opportunities to Structured Execution",
-  ];
-
-  const values = [
-    {
-      title: "Integrity in Every Deal",
-      desc: "We operate with discretion, transparency, and accountability across all engagements.",
-    },
-    {
-      title: "Excellence in Execution",
-      desc: "Our work is structured, disciplined, and focused on measurable commercial outcomes.",
-    },
-    {
-      title: "Strategic Partnership",
-      desc: "We build long-term relationships that create sustained value for our clients.",
-    },
-    {
-      title: "Cross-Border Impact",
-      desc: "Connecting global opportunities with African market potential.",
-    },
-    {
-      title: "Long-Term Value",
-      desc: "We structure solutions designed for sustainability and growth.",
-    },
-  ];
-
-  const approach = [
-    "Discovery & Strategic Alignment",
-    "Opportunity Identification",
-    "Deal Structuring & Partner Matching",
-    "Implementation Support",
-  ];
-
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-gradient-to-r from-gray-900 to-blue-900 text-white py-28 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      <section
+        className="relative w-full h-[90vh] flex items-center justify-center text-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImg})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3A]/80 to-[#0B1F3A]/30"></div>
+        <div className="relative z-10 px-6 max-w-3xl text-white">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
             About ForthWorth G.
           </h1>
-          <p className="max-w-3xl mx-auto text-gray-200 text-lg leading-relaxed">
-            ForthWorth G. is a global business facilitation and advisory firm
-            based in Accra, Ghana — connecting the right people to the right
-            opportunities and translating relationships into results.
+          <p className="text-gray-200 text-lg md:text-xl leading-relaxed">
+            Connecting businesses, investors, and institutions with structured
+            opportunities across Africa and beyond. Our journey is defined by
+            impact, integrity, and results.
           </p>
+
+          {/* Hero CTAs */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/services"
+              className="bg-yellow-400 text-[#0B1F3A] px-8 py-3 rounded font-semibold hover:opacity-90 transition"
+            >
+              Our Services
+            </Link>
+            <Link
+              to="/contact"
+              className="bg-transparent border border-yellow-400 text-yellow-400 px-8 py-3 rounded font-semibold hover:bg-yellow-400 hover:text-[#0B1F3A] transition"
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/contact" // changed to Contact page
+              className="bg-white text-[#0B1F3A] px-8 py-3 rounded font-semibold hover:bg-gray-200 transition"
+            >
+              Explore Opportunities
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* WHO WE ARE */}
-      <section className="bg-white py-20 px-6">
+      <section className="bg-gray-50 py-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              ForthWorth G. is a cross-sectoral business advisory firm helping
-              clients unlock commercial value through strategic deal structuring,
-              procurement facilitation, relationship management, and international
-              trade linkages.
+            <h2 className="text-3xl font-bold text-[#0B1F3A] mb-6">
+              Who We Are
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              ForthWorth G. is a global business facilitation and advisory
+              firm based in Accra, Ghana. We specialize in connecting the right
+              people to the right opportunities, structuring deals, and
+              facilitating cross-border partnerships.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              With over two decades of experience and a globally connected
-              network, we support companies seeking market entry, expansion,
-              partnerships, and investment opportunities across Africa and beyond.
-            </p>
-          </div>
-
-          <div className="bg-gray-100 h-80 rounded-xl shadow-inner flex items-center justify-center text-gray-400">
-            Corporate Image Placeholder
-          </div>
-        </div>
-      </section>
-
-      {/* MISSION & VISION */}
-      <section className="bg-gray-50 py-20 px-6">
-        <div className="max-w-5xl mx-auto text-center grid md:grid-cols-2 gap-10">
-          <div className="bg-white p-10 rounded-xl shadow-sm">
-            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="text-gray-600">
-              To bridge opportunity and execution by facilitating impactful
-              business partnerships, transactions, and trade relationships.
+            <p className="text-gray-700 leading-relaxed">
+              With over two decades of experience, our network spans local and
+              international markets, ensuring measurable results and
+              sustainable value for our clients.
             </p>
           </div>
 
-          <div className="bg-white p-10 rounded-xl shadow-sm">
-            <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-            <p className="text-gray-600">
-              To be the preferred partner in Africa for businesses seeking
-              strategic linkages, trade facilitation, and market success.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT WE CONNECT */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">
-            Connecting Opportunity Across Markets
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-left">
-            {bridges.map((item, i) => (
-              <div key={i} className="bg-gray-50 p-6 rounded-xl shadow-sm">
-                <h3 className="font-semibold text-lg mb-2">{item}</h3>
-                <p className="text-gray-600 text-sm">
-                  We align stakeholders, mitigate risk, and structure pathways
-                  for successful execution.
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FOUNDER */}
-      <section className="bg-gray-50 py-20 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-          <div>
+          <div className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src={ceoImg}
-              alt="Gilbert Ossei Hyeamann"
-              className="rounded-xl shadow-lg w-full object-cover"
+              src={whoWeAreImg}
+              alt="Who We Are"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />
           </div>
-
-          <div>
-            <h2 className="text-3xl font-bold mb-4">
-              Gilbert Ossei Hyeamann
-            </h2>
-            <p className="text-blue-700 font-medium mb-4">
-              Founder & CEO
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Gilbert Ossei Hyeamann is a respected business advisor and global
-              facilitator with over 20 years of experience in deal structuring,
-              procurement, and international trade.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              He has successfully advised and hosted high-level trade delegations
-              and facilitated millions in investment partnerships across Ghana
-              and international markets, with a reputation built on results,
-              diplomacy, and discretion.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* VALUES */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">Our Core Values</h2>
+      {/* OUR APPROACH */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-bold text-[#0B1F3A] mb-4">Our Approach</h2>
+          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            From discovering strategic opportunities to structuring high-value
+            deals and supporting implementation, our approach ensures measurable
+            results for our clients.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-            {values.map((item, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-lg transition"
-              >
-                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
+        <div className="grid md:grid-cols-3 gap-12">
+          {/* Step 1 */}
+          <div className="relative rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={opportunityImg}
+              alt="Opportunity Discovery"
+              className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-end p-6">
+              <div>
+                <span className="text-yellow-400 font-bold text-2xl">1</span>
+                <h3 className="text-white font-semibold text-xl mt-2">
+                  Opportunity Discovery
+                </h3>
+                <p className="text-gray-200 text-sm mt-1">
+                  Identify strategic business opportunities aligned with client
+                  goals and market realities.
                 </p>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* APPROACH */}
-      <section className="bg-gray-50 py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">Our Approach</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {approach.map((step, i) => (
-              <div key={i} className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold">
-                  {i + 1}
-                </div>
-                <h3 className="font-semibold">{step}</h3>
+          {/* Step 2 */}
+          <div className="relative rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={dealStructuringImg}
+              alt="Deal Structuring"
+              className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-end p-6">
+              <div>
+                <span className="text-yellow-400 font-bold text-2xl">2</span>
+                <h3 className="text-white font-semibold text-xl mt-2">
+                  Deal Structuring & Partner Matching
+                </h3>
+                <p className="text-gray-200 text-sm mt-1">
+                  Structure transactions and align partners for secure, scalable
+                  outcomes with compliance, transparency, and measurable impact.
+                </p>
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="relative rounded-xl overflow-hidden shadow-lg">
+            <img
+              src={implementationImg}
+              alt="Implementation Support"
+              className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10 flex items-end p-6">
+              <div>
+                <span className="text-yellow-400 font-bold text-2xl">3</span>
+                <h3 className="text-white font-semibold text-xl mt-2">
+                  Implementation Support
+                </h3>
+                <p className="text-gray-200 text-sm mt-1">
+                  Hands-on execution support to ensure strategies and deals are
+                  successfully implemented for measurable impact.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CREDIBILITY STRIP */}
-      <section className="bg-gray-900 py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center text-white">
-          <div>
-            <h3 className="text-3xl font-bold">20+</h3>
-            <p className="text-gray-300">Years Experience</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold">30+</h3>
-            <p className="text-gray-300">Trade Delegations</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold">Global</h3>
-            <p className="text-gray-300">Network Reach</p>
-          </div>
-          <div>
-            <h3 className="text-3xl font-bold">Millions</h3>
-            <p className="text-gray-300">Deals Facilitated</p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-blue-700 py-20 px-6 text-center text-white">
-        <h2 className="text-3xl font-bold mb-4">
-          Let’s Build Your Next Opportunity
+      {/* FINAL CTA */}
+      <section className="bg-[#0B1F3A] py-24 px-6 text-center text-white">
+        <h2 className="text-4xl font-bold mb-4">
+          Ready to Explore Your Next Opportunity?
         </h2>
-        <p className="max-w-2xl mx-auto mb-8 text-blue-100">
-          Speak with our team to explore trade, investment, procurement, or
-          strategic partnership opportunities.
+        <p className="max-w-2xl mx-auto mb-8 text-gray-300 leading-relaxed">
+          Connect with ForthWorth G. today to discover trade, investment,
+          procurement, or strategic partnership opportunities.
         </p>
-        <button className="bg-white text-blue-700 px-10 py-3 rounded font-semibold hover:bg-gray-100 transition">
-          Contact Us
-        </button>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            to="/services"
+            className="bg-yellow-400 text-[#0B1F3A] px-8 py-3 rounded font-semibold hover:opacity-90 transition"
+          >
+            Our Services
+          </Link>
+          <Link
+            to="/contact"
+            className="bg-transparent border border-yellow-400 text-yellow-400 px-8 py-3 rounded font-semibold hover:bg-yellow-400 hover:text-[#0B1F3A] transition"
+          >
+            Contact Us
+          </Link>
+          <Link
+            to="/contact" // changed to Contact page
+            className="bg-white text-[#0B1F3A] px-8 py-3 rounded font-semibold hover:bg-gray-200 transition"
+          >
+            Explore Opportunities
+          </Link>
+        </div>
       </section>
     </>
   );

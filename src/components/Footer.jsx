@@ -48,10 +48,10 @@ const Footer = () => {
 
           <div className="space-y-3 text-sm">
             <p className="flex items-center gap-2">
-              <FiMail /> info@forthworthg.com
+              <FiMail /> support@forthworthg.com
             </p>
             <p className="flex items-center gap-2">
-              <FiPhone /> +233 XXX XXX XXX
+              <FiPhone /> +233 244643965
             </p>
           </div>
 
@@ -76,7 +76,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* ================= BOTTOM ================= */}
+      {/*  BOTTOM  */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-3">
           <p>© {new Date().getFullYear()} ForthWorth G. All rights reserved.</p>

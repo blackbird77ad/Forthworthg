@@ -1,29 +1,44 @@
 import React from "react";
+import contactHeroImg from "../assets/images/contact-us.png";
 
 const Contact = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
 
       {/* HERO */}
-      <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-20 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
+      <section
+        className="relative w-full h-[80vh] flex items-center justify-center text-center text-white"
+        style={{
+          backgroundImage: `url(${contactHeroImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-800/60 to-gray-900/80"></div>
+        <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Let’s Build Your Next Opportunity Together
           </h1>
-          <p className="text-gray-300">
+          <p className="text-gray-200 text-lg">
             Reach out to discuss partnerships, projects, investments, or strategic advisory.
           </p>
+          <a
+            href="#contact-form"
+            className="mt-6 inline-block bg-[#C8A24A] text-gray-900 font-semibold px-8 py-3 rounded hover:bg-yellow-600 transition"
+          >
+            Contact Us Now
+          </a>
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
-
-        {/* CONTACT FORM */}
-        <div className="bg-white p-8 rounded-xl shadow-sm">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-900">
-            Send Us a Message
-          </h2>
+      {/* CONTACT FORM + IMAGE SIDE BY SIDE */}
+      <section
+        id="contact-form"
+        className="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12"
+      >
+        {/* FORM */}
+        <div className="flex-1 bg-white p-8 rounded-xl shadow-lg">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900">Send Us a Message</h2>
 
           <form className="space-y-5">
             <div>
@@ -82,31 +97,40 @@ const Contact = () => {
           </form>
         </div>
 
-        {/* CONTACT INFO */}
-        <div className="flex flex-col justify-center">
-          <h2 className="text-2xl font-semibold mb-6 text-gray-900">
-            Contact Information
-          </h2>
+        {/* IMAGE */}
+        <div className="flex-1 flex items-center justify-center">
+          <img
+            src={contactHeroImg}
+            alt="Contact Visual"
+            className="rounded-xl shadow-lg object-cover w-full h-[500px] md:h-auto"
+          />
+        </div>
+      </section>
 
-          <div className="space-y-5 text-gray-700 leading-relaxed">
-            <p>
+      {/* SEPARATE CONTACT INFO SECTION */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-stretch gap-12">
+          <div className="flex-1 bg-gray-100 p-12 rounded-xl flex flex-col justify-center shadow-lg">
+            <h2 className="text-3xl font-bold mb-6 text-gray-900">Contact Information</h2>
+
+            <p className="mb-4">
               <strong>Office Address:</strong><br />
               14 Mission Street<br />
               Kuku Hill, Osu R.E<br />
               Accra, Ghana
             </p>
 
-            <p>
+            <p className="mb-4">
               <strong>Phone:</strong><br />
-              +233 XXX XXX XXX
+              +233 244643965
             </p>
 
-            <p>
+            <p className="mb-4">
               <strong>Email:</strong><br />
-              admin@forthworthg.com
+              support@forthworthg.com
             </p>
 
-            <p className="text-sm text-gray-500 mt-6">
+            <p className="text-sm text-gray-500 mt-4">
               Our team typically responds within 24–48 business hours.
             </p>
           </div>
@@ -114,14 +138,19 @@ const Contact = () => {
       </section>
 
       {/* CTA STRIP */}
-      <section className="bg-blue-700 py-16 text-center text-white px-6">
+      <section className="bg-[#0B1F3A] py-16 text-center text-white px-6">
         <h2 className="text-3xl font-bold mb-4">
-          Strategic Partnerships Start Here
+          Ready to Take the Next Step?
         </h2>
-        <p className="max-w-2xl mx-auto text-blue-100">
-          Whether you are seeking advisory, investment opportunities, or project
-          facilitation, ForthWorth G. is ready to support your vision.
+        <p className="max-w-2xl mx-auto text-gray-300 mb-6">
+          Submit your project details or inquiry and our team will respond promptly.
         </p>
+        <a
+          href="#contact-form"
+          className="inline-block bg-[#C8A24A] text-gray-900 font-semibold px-8 py-3 rounded hover:bg-yellow-600 transition"
+        >
+          Contact Us Now
+        </a>
       </section>
 
     </div>

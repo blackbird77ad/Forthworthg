@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 import slide1 from "../assets/images/slide01.jpg";
 import slide2 from "../assets/images/95727.jpg";
@@ -62,12 +63,11 @@ const Home = () => {
 
   return (
     <>
-      {/* ================= HERO ================= */}
+      {/* HERO SECTION */}
       <section
         className="relative w-full min-h-screen bg-cover bg-center transition-all duration-700"
         style={{ backgroundImage: `url(${slides[current].image})` }}
       >
-        {/* Navy overlay */}
         <div className="absolute inset-0 bg-[#0B1F3A]/70"></div>
 
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white min-h-screen px-6">
@@ -84,22 +84,29 @@ const Home = () => {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <button className="bg-[#0B1F3A] border border-[#C8A24A] hover:bg-[#C8A24A] hover:text-[#0B1F3A] px-8 py-3 rounded font-semibold transition">
+            <Link
+              to="/services"
+              className="bg-[#0B1F3A] border border-[#C8A24A] hover:bg-[#C8A24A] hover:text-[#0B1F3A] px-8 py-3 rounded font-semibold transition"
+            >
               Our Services
-            </button>
-            <button className="bg-[#C8A24A] text-[#0B1F3A] hover:opacity-90 px-8 py-3 rounded font-semibold transition">
+            </Link>
+
+            <Link
+              to="/contact"
+              className="bg-[#C8A24A] text-[#0B1F3A] hover:opacity-90 px-8 py-3 rounded font-semibold transition"
+            >
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
 
-        {/* Slider dots */}
+        {/* Slider Dots */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-3 h-3 rounded-full transition ${
                 current === index ? "bg-[#C8A24A]" : "bg-white/50"
               }`}
             />
@@ -107,7 +114,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= IMPACT ================= */}
+      {/* IMPACT SECTION */}
       <section className="bg-[#F5F7FA] py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-12 text-[#0B1F3A]">
@@ -135,7 +142,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= ABOUT ================= */}
+      {/* ABOUT SECTION */}
       <section className="bg-white py-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div>
@@ -143,18 +150,27 @@ const Home = () => {
             <h2 className="text-3xl font-bold text-[#0B1F3A] mb-6">
               About ForthWorth G.
             </h2>
+
             <p className="text-gray-600 leading-relaxed">
               ForthWorth G. is a global business facilitation and advisory firm
               based in Accra, Ghana. We specialize in deal structuring,
-              procurement, business consulting, and trade delegation advisory —
-              connecting the right people to the right opportunities across
-              borders.
+              procurement, business consulting, and trade delegation advisory,
+              connecting the right people to the right opportunities across borders.
             </p>
+
             <p className="text-gray-600 leading-relaxed mt-4">
               With over two decades of experience and a globally connected
-              network, we translate relationships into measurable business
-              results.
+              network, we translate relationships into measurable business results.
             </p>
+
+            <div className="mt-6">
+              <Link
+                to="/about"
+                className="text-[#0B1F3A] font-semibold underline hover:text-[#C8A24A]"
+              >
+                Learn More About Us →
+              </Link>
+            </div>
           </div>
 
           <div className="rounded-lg overflow-hidden shadow-lg">
@@ -167,7 +183,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= SERVICES ================= */}
+      {/* SERVICES SECTION */}
       <section className="bg-[#F5F7FA] py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#0B1F3A] mb-14">
@@ -176,10 +192,22 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {[
-              "Transaction & Deal Structuring Advisory",
-              "Procurement & Purchasing Facilitation",
-              "Business Linkages & Consulting",
-              "Trade Delegation & Visit Advisory",
+              {
+                title: "Transaction & Deal Structuring Advisory",
+                desc: "We structure high-value transactions that align commercial objectives with market realities."
+              },
+              {
+                title: "Procurement & Purchasing Facilitation",
+                desc: "We streamline complex procurement processes ensuring cost efficiency and secure delivery."
+              },
+              {
+                title: "Business Linkages & Consulting",
+                desc: "We connect businesses to credible partners and unlock long-term commercial value."
+              },
+              {
+                title: "Trade Delegation & Visit Advisory",
+                desc: "We design and manage impactful trade missions that convert relationships into measurable results."
+              },
             ].map((service, index) => (
               <div
                 key={index}
@@ -187,59 +215,87 @@ const Home = () => {
               >
                 <div className="w-10 h-1 bg-[#C8A24A] mb-4"></div>
                 <h3 className="font-semibold text-[#0B1F3A] mb-3">
-                  {service}
+                  {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm">
-                  Bespoke solutions aligned with your strategic objectives,
-                  ensuring efficiency, compliance, and measurable value.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {service.desc}
                 </p>
               </div>
             ))}
           </div>
+
+          <div className="mt-14">
+            <Link
+              to="/services"
+              className="bg-[#0B1F3A] text-white px-8 py-3 rounded font-semibold hover:opacity-90 transition"
+            >
+              View Detailed Services
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ================= CEO ================= */}
+      {/* WHY FORTHWORTH */}
       <section className="bg-[#0B1F3A] py-24 px-6 text-white">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            <img
-              src={slide4}
-              alt="CEO"
-              className="w-full h-full object-cover"
-            />
-          </div>
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Why ForthWorth G.
+          </h2>
 
-          <div>
-            <h2 className="text-3xl font-bold mb-4">
-              Leadership
-            </h2>
-            <h3 className="text-xl text-[#C8A24A] font-semibold mb-4">
-              Gilbert Ossei Hyeamann
-            </h3>
-            <p className="text-gray-200 leading-relaxed">
-              Founder & CEO of ForthWorth G., Gilbert Ossei Hyeamann brings over
-              20 years of experience in deal structuring, procurement, and
-              international trade facilitation. He has successfully hosted
-              high-level delegations and facilitated millions in investment
-              partnerships across multiple sectors.
-            </p>
+          <p className="max-w-3xl mx-auto text-gray-300 leading-relaxed mb-12">
+            With over two decades of deal facilitation experience and a globally
+            connected network, we combine strategic insight, government access,
+            and execution discipline to deliver measurable commercial outcomes.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            <div>
+              <h3 className="text-[#C8A24A] font-semibold mb-2">
+                Strategic Network Access
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Direct engagement with government bodies and investment stakeholders.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-[#C8A24A] font-semibold mb-2">
+                Proven Execution
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Millions facilitated in structured partnerships and procurement transactions.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-[#C8A24A] font-semibold mb-2">
+                Cross-Border Expertise
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Trusted advisory for businesses entering Ghana and African markets.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ================= FINAL CTA ================= */}
+      {/* FINAL CTA */}
       <section className="bg-[#C8A24A] py-20 text-center px-6">
         <h2 className="text-3xl font-bold text-[#0B1F3A] mb-4">
           Let’s Build Your Next Opportunity Together
         </h2>
+
         <p className="text-gray-800 mb-6 max-w-2xl mx-auto">
-          Have a trade, procurement, or partnership interest in Africa? Speak
-          to the ForthWorth G. team today.
+          Have a trade, procurement, or partnership interest in Africa?
+          Speak to the ForthWorth G. team today.
         </p>
-        <button className="bg-[#0B1F3A] text-white px-10 py-3 rounded font-semibold hover:opacity-90">
+
+        <Link
+          to="/contact"
+          className="inline-block bg-[#0B1F3A] text-white px-10 py-3 rounded font-semibold hover:opacity-90 transition"
+        >
           Contact ForthWorth G.
-        </button>
+        </Link>
       </section>
     </>
   );
